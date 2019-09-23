@@ -3,12 +3,9 @@ import tkinter.font
 from tkinter import *
 from tkinter import messagebox
 from tkinter import Menu
-import RPi.GPIO as GPIO
 import os
 wait=None
 rec=None
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD) 
 def konumsal():
     os.chdir('Programlar')
     os.system('python3 konumgonder.py')
