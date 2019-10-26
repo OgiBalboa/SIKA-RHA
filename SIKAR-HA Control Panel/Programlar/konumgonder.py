@@ -6,15 +6,47 @@ import RPi.GPIO as GPIO
 import os
 wait=None
 rec=None
-
 GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BOARD) #Numbers GPIOs by physical location
+GPIO.setmode(GPIO.BOARD) 
+#PINOUT SETTINGS
+## MOTOR 1
+GPIO.setup(29,GPIO.OUT) #Pin 3 is set output for servo
+pwm=GPIO.PWM(29,50) # creating 50 Hz PWM from Pin 3 (Servo works with 20ms period or 50Hz freq)
+pwm.start(0) # Lets start PWM
+##MOTOR 2
+GPIO.setup(31,GPIO.OUT)
+pwm2=GPIO.PWM(31,50)
+pwm2.start(0)
+##MOTOR 3
+GPIO.setup(33,GPIO.OUT)
+pwm3=GPIO.PWM(33,50)
+pwm3.start(0)
+
+#SERVO SINYAL KODLARI
 def SetAngle(angle):  # Angle paramater will be got from user
-    print('go')
+    duty = angle / 18 + 2  #Converting angle to duty
+    GPIO.output(29, True)   # OUTPUT is high along the duty length
+    pwm.ChangeDutyCycle(duty)
+    wait=pencere.after(1000) # wait servo to get there
+    GPIO.output(29, False)   # OUTPUT is low till starting function again
+    pwm.ChangeDutyCycle(0)
+    
 def SetAngle2(angle):  # Angle paramater will be got from user
-    print('go')
+    duty = angle / 18 + 2  #Converting angle to duty
+    GPIO.output(31, True)   # OUTPUT is high along the duty length
+    pwm2.ChangeDutyCycle(duty)
+    wait=pencere.after(1000) # wait servo to get there
+    GPIO.output(31, False)   # OUTPUT is low till starting function again
+    pwm2.ChangeDutyCycle(0)
+
 def SetAngle3(angle):  # Angle paramater will be got from user
-    print('go')
+    duty = angle / 18 + 2  #Converting angle to duty
+    GPIO.output(33, True)   # OUTPUT is high along the duty length
+    pwm3.ChangeDutyCycle(duty)
+    wait=pencere.after(1000) # wait servo to get there
+    GPIO.output(33, False)   # OUTPUT is low till starting function again
+    pwm3.ChangeDutyCycle(0)
+    
 #MOTOR ANGLES
 def ServoOn():
     x=int(str(angle1.get()))

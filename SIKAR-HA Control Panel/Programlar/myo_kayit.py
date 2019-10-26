@@ -8,7 +8,6 @@ from tkinter import Menu
 from tkinter import filedialog
 import sys
 import os
-import threading
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BOARD) #Numbers GPIOs by physical location
 GPIO.setup(5,GPIO.OUT)
@@ -48,7 +47,6 @@ arduino.minsize(height='800',width='430')
 Label(arduino,text='Robot Konumlandırınız',height=2,font='Arial').grid(column = '1',row = '0')
 Label(arduino,text="KAYIT NO",fg = 'blue',bg='White',height = '4',width= 14,font=('times',20)).grid(column = 0,row = 6)
 Label(arduino,text= "KONUM BİLGİLERİ",bg = 'white',width = 17,height = '4',font=('times',20)).grid(column = 1,row=6)
-
 global reg
 reg=[]
 global counter1
@@ -150,10 +148,8 @@ def dosya_kaydet():
     for i in range(len(reg)):
         yaz+=str(reg[i])
         yaz+=" "
-    try:
-        os.chdir("Kayitlar")
-    except:
-        print("kayitlar dosyasi yok")
+    os.chdir("..")
+    os.chdir("Kayitlar")
     f = filedialog.asksaveasfile(mode='w', defaultextension=".txt")
     if f is None: 
         return 
@@ -162,10 +158,7 @@ def dosya_kaydet():
     
 def dosya_ac():
     os.chdir("..")
-    try:
-        os.chdir("Kayitlar")
-    except:
-        pass
+    os.chdir("Kayitlar")
     filename = filedialog.askopenfile()
     saved = filename.read()
     reg.clear()
@@ -190,21 +183,19 @@ def dosya_ac():
             messagebox.showinfo(' BAŞARILI','Kayıtlı Robot konumlarına ulaşıldı')
    
     
-def dallama():
-    kayitbasla = threading.Thread(target = KayitBaslat)
-    kayitbasla.start()
+
 def bos():
     return None
 
 serial=Button(arduino,text='Serial Port Aç',fg='white',bg='blue',font = 'Arial',command=SerialOku,height = 2)
 serial.grid(column =0,row=1)
-Label(arduino,text='Kayıtlı Olan Pozisyonlar',fg='black',bg='yellow',font='Arial',height=2).grid(column = 1, row = 2)
+Label(text='Kayıtlı Olan Pozisyonlar',fg='black',bg='yellow',font='Arial',height=2).grid(column = 1, row = 2)
 #bkayit1=Button(text='1. Pozisyon',command=kayit)
 #bkayit1.grid(column=1,row=3,sticky=W)
-bkayitbaslat=Button(arduino,text='Kayıt Başlat',fg='white',bg='red',font='Arial',width = 11,height=2,command=dallama)
+bkayitbaslat=Button(text='Kayıt Başlat',fg='white',bg='red',font='Arial',width = 11,height=2,command=KayitBaslat)
 bkayitbaslat.grid(column=0,row=2)
 
-gerial=Button(arduino,text='Geri Al ', font=('times',14),width = 11,height=2,command = sil).grid(column = 1, row = 1)
+gerial=Button(text='Geri Al ', font=('times',14),width = 11,height=2,command = sil).grid(column = 1, row = 1)
 menubar = Menu(arduino)
 filemenu = Menu(menubar)
 filemenu.add_command(label ="Aç", command = dosya_ac)
