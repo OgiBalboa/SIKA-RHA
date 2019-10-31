@@ -1,3 +1,14 @@
+#-------------------------------------------------------------------------------
+# Name:        Control Panel    
+# Purpose:     SIKA-RHA Robot Kontrol GUI
+#
+# Author:      @ogibalboa
+#
+# Created:     07.10.2018
+# Copyright:   (c) OgiBalboa 2019
+# Licence:     <GNU GCC>
+#-------------------------------------------------------------------------------
+
 import webbrowser
 import tkinter.font
 from tkinter import *
