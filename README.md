@@ -25,7 +25,8 @@ Raspberry'de kaydedilen pozisyonları bir save dosyasında saklayarak programı 
 Robotun Gripper'ına bir kalem takarak şekil çizdirmek.(Yakında)
 ## v0.0.1 26 Şubat 2019 | Servo Döndürmek <a name="v0.0.1"></a>
 Servoya açı parametresi verilip kaydedilir ve servonun "0" pozisyonundan kayıtlı pozisyona döngüde olması sağlanır.
-
+# SON DURUM :
+* ![GUI-main](https://github.com/OgiBalboa/SIKA-RHA/blob/main/ScreenShots/SIKA-RHA.png?raw=true)
 ## Nasıl Yapılır Videosu :
 
 * [![Servo döndürmek](http://img.youtube.com/vi/ZuVTEtgH9Ns/0.jpg)](http://www.youtube.com/watch?v=ZuVTEtgH9Ns)
