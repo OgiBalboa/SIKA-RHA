@@ -1,4 +1,4 @@
-# SIKAR HA! GELİŞTİRİCİ GÜNLÜKLERİ
+# SIKA-RHA! GELİŞTİRİCİ GÜNLÜKLERİ
 * ## Güncel Verisyon : v0.2
 Bu proje Servo motorlar ile hareket ettirilen bir robotun farklı metodlarla kontrol edilmesi üzerine yapılmış bir "Robot Kontrol Ünitesi'dir". Amacımız robotun kontrol yöntemlerini araştırmak ve bu konuda çalışma yapmak isteyen insanlara kaynak oluşturmaktır.
 
