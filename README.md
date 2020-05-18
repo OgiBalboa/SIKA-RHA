@@ -31,7 +31,7 @@ Servoya açı parametresi verilip kaydedilir ve servonun "0" pozisyonundan kayı
 
 * [![Servo döndürmek](http://img.youtube.com/vi/ZuVTEtgH9Ns/0.jpg)](http://www.youtube.com/watch?v=ZuVTEtgH9Ns)
 
-## Update v0.0.2 28 Şubat 2019 | SIKAR-HA Kontrol Panel adıyla GUI Yazmaya Başladık <a name="v0.0.2"></a>
+## Update v0.0.2 28 Şubat 2019 | SIKA-R-HA Kontrol Panel adıyla GUI Yazmaya Başladık <a name="v0.0.2"></a>
 "SIKAR HA!" için GUI yazmaya başladık. İlk hali ControlPanelv1 dosyasındadır. Açıklamaları GUI adlı branch'dan bulabilirsiniz.
 
 * ![GUI-main](https://github.com/marmara-technology/SIKAR-HA/blob/master/ScreenShots/mainmenu.png)
